@@ -2,4 +2,5 @@ import cv2
 
 img = cv2.imread('aykut.jpg')
 cv2.imshow('image', img)
+cv2.imwrite('aykutunkopyasi.jpg', img)
 cv2.waitKey(0)
