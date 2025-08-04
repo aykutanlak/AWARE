@@ -1,0 +1,20 @@
+import cv2
+import numpy as np
+
+img = cv2.imread('chess.jpg', cv2.IMREAD_GRAYSCALE)
+
+
+sobelx = cv2.Sobel(img, cv2.CV_64F, 1, 0, ksize=3)  # Horizontal edges
+sobely = cv2.Sobel(img, cv2.CV_64F, 0, 1, ksize=3)  # Vertical edges
+
+
+gradient_magnitude = cv2.magnitude(sobelx, sobely)
+
+
+gradient_magnitude = cv2.convertScaleAbs(gradient_magnitude)
+
+
+cv2.imshow("Sobel Edge Detection", gradient_magnitude)
+
+cv2.waitKey(0)
+cv2.destroyAllWindows()
