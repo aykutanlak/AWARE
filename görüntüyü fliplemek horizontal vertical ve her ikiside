@@ -1,0 +1,11 @@
+import cv2
+img = cv2.imread('aykutabi.png')
+flipped = cv2.flip(img, 0)
+flipped2 = cv2.flip(img, 1)
+flipped3 = cv2.flip(img, -1)
+cv2.imshow('flippedhorizon', flipped)
+cv2.imshow('flipped2vertical', flipped2)
+cv2.imshow('flipped3both', flipped3)
+cv2.imshow('orijinal', img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
